@@ -18,7 +18,7 @@ function documentEvents() {
     const notifOptions = {
       type: "basic",
       iconUrl: "images/background48.png",
-      title: "Background notifcation",
+      title: "Background notification",
       message: "Congrats you have added your background image!",
     };
     chrome.notifications.create("", notifOptions, function () {
@@ -37,12 +37,13 @@ function documentEvents() {
 
 function convertIntoCss(url) {
   const css = `html body { 
-        background: url(${url}); \n
-        image-rendering: crisp-edges; \n        
-        image-rendering: -webkit-optimize-contrast; \n
-        background-size:     cover; \n
-        background-repeat:   no-repeat; \n
-        background-position: center center; \n    
-      }\n`;
+    background: url(${ url }); \n
+    image-rendering: crisp-edges; \n        
+    image-rendering: -webkit-optimize-contrast; \n
+    background-size:     cover; \n
+    background-repeat:   no-repeat; \n
+    background-position: right bottom; \n
+    background-attachment: fixed; \n
+    }\n`;
   return css;
 }
